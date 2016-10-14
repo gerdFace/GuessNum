@@ -18,13 +18,12 @@ public class GameLauncher {
         System.out.println("I'm thinking of a number from 1 to 100.");
         System.out.println("Can you guess what it is in 5 tries?");
 
-        while (count < 5) {
+        while (count < 5 && guess != theNum) {
             guess = userIn.nextInt();
             count++;
             game.helpUser(guess, theNum, count);
             game.loseGame(theNum, guess, count);
             game.winGame(theNum, guess, count);
-
         }
     }
 }
