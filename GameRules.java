@@ -2,14 +2,19 @@
 public class GameRules {
     /*When count exceeds 5 without successful guess the program displays "lose message" and prints the correct number*/
     public void loseGame(int theNum, int guess, int count) {
-        if ((count >= 5) && (guess != theNum))
+        if ((count >= 5) && (guess != theNum)) {
             System.out.println("You are out of guesses. The number was " + theNum + ".");
+        }
     }
 
     /*When user guesses correct number "win message" is displayed with number of tries*/
     public void winGame(int theNum, int guess, int count) {
-        if (guess == theNum) System.out.println("Congratulations. You guessed the number with "
-                + count + " tries!");
+        if ((guess == theNum) && (count > 1)) {
+            System.out.println("Congratulations. You guessed the number with "
+                    + count + " tries!");
+        } else if ((guess == theNum) && (count == 1)) {
+            System.out.println("First try?! Way to go!");
+        }
     }
 
     /*User is given helpful information for each guess that is incorrect*/

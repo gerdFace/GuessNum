@@ -9,13 +9,15 @@ public class GameLauncher {
     private static GameRules game;
     private static Random rand;
     private static Scanner userIn;
+    private static HighScore score;
 
     public static void main(String[] args) {
         userIn = new Scanner(System.in);
         rand = new Random();
         theNum = rand.nextInt(100) + 1;
         game = new GameRules();
-        System.out.println("I'm thinking of a number from 1 to 100.");
+        score = new HighScore();
+        System.out.println("I'm thinking of a number from 1 to 100." + theNum);
         System.out.println("Can you guess what it is in 5 tries?");
 
         while (count < 5 && guess != theNum) {
@@ -25,5 +27,6 @@ public class GameLauncher {
             game.loseGame(theNum, guess, count);
             game.winGame(theNum, guess, count);
         }
+        score.setScore(count);
     }
 }
