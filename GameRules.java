@@ -1,10 +1,10 @@
+package main;
 
 public class GameRules {
     /*When count exceeds 5 without successful guess the program displays "lose message" and prints the correct number*/
     public void loseGame(int theNum, int guess, int count) {
-        if ((count >= 5) && (guess != theNum)) {
+        if ((count >= 5) && (guess != theNum))
             System.out.println("You are out of guesses. The number was " + theNum + ".");
-        }
     }
 
     /*When user guesses correct number "win message" is displayed with number of tries*/
@@ -13,7 +13,7 @@ public class GameRules {
             System.out.println("Congratulations. You guessed the number with "
                     + count + " tries!");
         } else if ((guess == theNum) && (count == 1)) {
-            System.out.println("First try?! Way to go!");
+            System.out.println("First try! Way to go!");
         }
     }
 
@@ -27,7 +27,7 @@ public class GameRules {
         if (count == 4) {
             System.out.println("Last try!");
         }
-        if ((guess > 100) || (guess < 0)) {
+        if ((guess > 100) || (guess <= 0)) {
             System.out.println("The number is between 1 and 100.");
         }
     }
